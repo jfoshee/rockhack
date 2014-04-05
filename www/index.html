@@ -12,25 +12,32 @@
 <div id="chart2"></div>
 
 <script>
-    var depth = logData['DEPT'];
-    var amp = logData['CHI1'];
-    console.log(depth.length);
-    console.log(amp.length);
+
+    var graphDataFor = function(logName, color) {
+        var depth = logData['DEPT'];
+        var amp = logData[logName];
+        if (amp.length != depth.length)
+            console.log('Warning: different lengths');    
+        var data = [];
+        for(var i = 0; i < depth.length; ++i) {
+            data[i] = {y: amp[i], x: depth[i] };
+        }
+        return {
+            color: color || 'black',
+            data: data
+        };
+    };
     
-    var data = [];
-    for(var i = 0; i < depth.length; ++i) {
-        data[i] = {y: amp[i], x: depth[i] };
-    }
+    var rhob = graphDataFor('RHOB', 'red');
+    var gr = graphDataFor('GR', 'yellow');
+    var dphi = graphDataFor('DPHI', 'green');
     
     var graph = new Rickshaw.Graph( {
         element: document.querySelector("#chart"),
         width: 580,
         height: 250,
         renderer: 'line',
-        series: [ {
-                color: 'steelblue',
-                data: data
-        } ]
+        series: [ rhob, dphi ]
     } );
     graph.render();
     
@@ -39,23 +46,14 @@
         width: 580,
         height: 250,
         renderer: 'line',
-        series: [ {
-                color: 'steelblue',
-                data: data
-        } ]
+        series: [ gr ]
     } );
     graph2.render();
-
-    var xAxis = new Rickshaw.Graph.Axis.X({
-        graph: graph,
-        tickFormat: Rickshaw.Fixtures.Number.formatKMBT
-    });
-    xAxis.render();
     
-    var yAxis = new Rickshaw.Graph.Axis.Y({
-        graph: graph,
-        tickFormat: Rickshaw.Fixtures.Number.formatKMBT
-    });
+    var tickFormat = Rickshaw.Fixtures.Number.formatKMBT;
+    var xAxis = new Rickshaw.Graph.Axis.X({ graph: graph, tickFormat: tickFormat });
+    xAxis.render();
+    var yAxis = new Rickshaw.Graph.Axis.Y({ graph: graph, tickFormat: tickFormat });
     yAxis.render();
     
     var preview = new Rickshaw.Graph.RangeSlider.Preview( {
