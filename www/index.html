@@ -1,9 +1,9 @@
+<!doctype html>
 <html>
 <body>
-<link rel="stylesheet" href="./vendor/rickshaw.min.css">
-<script src="./vendor/d3.min.js"></script>
-<script src="./vendor/d3.layout.min.js"></script>
-<script src="./vendor/rickshaw.min.js"></script>
+<link rel="stylesheet" href="vendor/rickshaw.min.css">
+<script src="vendor/d3.v3.js"></script>
+<script src="vendor/rickshaw.min.js"></script>
 <script src="log_json.json"></script>
 
 <div id="chart"></div>
@@ -16,7 +16,7 @@
     console.log(amp.length);
     
     var data = [];
-    for(var i = 0; i < 500; /*depth.length;*/ ++i) {
+    for(var i = 0; i < depth.length; ++i) {
         data[i] = {y: amp[i], x: depth[i] };
     }
     
@@ -30,17 +30,19 @@
                 data: data
         } ]
     } );
+    graph.render();
     
     var xAxis = new Rickshaw.Graph.Axis.X({
         graph: graph,
         tickFormat: Rickshaw.Fixtures.Number.formatKMBT
     });
+    xAxis.render();
+    
     var yAxis = new Rickshaw.Graph.Axis.Y({
         graph: graph,
         tickFormat: Rickshaw.Fixtures.Number.formatKMBT
     });
-    
-    graph.render();
+    yAxis.render();
     
     var preview = new Rickshaw.Graph.RangeSlider.Preview( {
     	graph: graph,
