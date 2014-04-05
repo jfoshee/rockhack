@@ -4,12 +4,20 @@
 <script src="./vendor/d3.min.js"></script>
 <script src="./vendor/d3.layout.min.js"></script>
 <script src="./vendor/rickshaw.min.js"></script>
+<script src="log_json.json"></script>
 
 <div id="chart"></div>
 
 <script>
+    var depth = logData['DEPT'];
+    var amp = logData['CHI1'];
+    console.log(depth.length);
+    console.log(amp.length);
 
-    var data = [ { x: 0, y: 40 }, { x: 1, y: 49 }, { x: 2, y: 17 }, { x: 3, y: 42 } ];
+    var data = [];
+    for(var i = 0; i < depth.length; ++i) {
+        data[i] = {y: amp[i], x: depth[i] };
+    }
 
 var graph = new Rickshaw.Graph( {
         element: document.querySelector("#chart"),
