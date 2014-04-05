@@ -13,33 +13,33 @@
     var amp = logData['CHI1'];
     console.log(depth.length);
     console.log(amp.length);
-
+    
     var data = [];
-    for(var i = 0; i < depth.length; ++i) {
+    for(var i = 0; i < 500; /*depth.length;*/ ++i) {
         data[i] = {y: amp[i], x: depth[i] };
     }
-
-var graph = new Rickshaw.Graph( {
+    
+    var graph = new Rickshaw.Graph( {
         element: document.querySelector("#chart"),
         width: 580,
         height: 250,
+        renderer: 'line',
         series: [ {
                 color: 'steelblue',
                 data: data
         } ]
-} );
-
-var xAxis = new Rickshaw.Graph.Axis.X({
-    graph: graph,
-    tickFormat: Rickshaw.Fixtures.Number.formatKMBT
-});
-var yAxis = new Rickshaw.Graph.Axis.Y({
-    graph: graph,
-    tickFormat: Rickshaw.Fixtures.Number.formatKMBT
-});
-
-graph.render();
-
+    } );
+    
+    var xAxis = new Rickshaw.Graph.Axis.X({
+        graph: graph,
+        tickFormat: Rickshaw.Fixtures.Number.formatKMBT
+    });
+    var yAxis = new Rickshaw.Graph.Axis.Y({
+        graph: graph,
+        tickFormat: Rickshaw.Fixtures.Number.formatKMBT
+    });
+    
+    graph.render();
 </script>
 </body>
 </html>
