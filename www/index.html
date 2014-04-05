@@ -1,5 +1,6 @@
 <html>
 <body>
+<link rel="stylesheet" href="./vendor/rickshaw.min.css">
 <script src="./vendor/d3.min.js"></script>
 <script src="./vendor/d3.layout.min.js"></script>
 <script src="./vendor/rickshaw.min.js"></script>
@@ -9,18 +10,27 @@
 <script>
 
     var data = [ { x: 0, y: 40 }, { x: 1, y: 49 }, { x: 2, y: 17 }, { x: 3, y: 42 } ];
-    
-    var graph = new Rickshaw.Graph( {
-    	element: document.querySelector("#chart"),
-    	width: 580,
-    	height: 250,
-    	series: [ {
-    		color: 'steelblue',
-    		data: data
-    	} ]
-    } );
-    
-    graph.render();
+
+var graph = new Rickshaw.Graph( {
+        element: document.querySelector("#chart"),
+        width: 580,
+        height: 250,
+        series: [ {
+                color: 'steelblue',
+                data: data
+        } ]
+} );
+
+var xAxis = new Rickshaw.Graph.Axis.X({
+    graph: graph,
+    tickFormat: Rickshaw.Fixtures.Number.formatKMBT
+});
+var yAxis = new Rickshaw.Graph.Axis.Y({
+    graph: graph,
+    tickFormat: Rickshaw.Fixtures.Number.formatKMBT
+});
+
+graph.render();
 
 </script>
 </body>
