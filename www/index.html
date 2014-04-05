@@ -4,10 +4,12 @@
 <link rel="stylesheet" href="vendor/rickshaw.min.css">
 <script src="vendor/d3.v3.js"></script>
 <script src="vendor/rickshaw.min.js"></script>
+<script src="vendor/Rickshaw.Graph.RangeSlider.Preview.js"></script>
 <script src="log_json.json"></script>
 
 <div id="chart"></div>
 <div id="preview"></div>
+<div id="chart2"></div>
 
 <script>
     var depth = logData['DEPT'];
@@ -32,6 +34,18 @@
     } );
     graph.render();
     
+    var graph2 = new Rickshaw.Graph( {
+        element: document.querySelector("#chart2"),
+        width: 580,
+        height: 250,
+        renderer: 'line',
+        series: [ {
+                color: 'steelblue',
+                data: data
+        } ]
+    } );
+    graph2.render();
+
     var xAxis = new Rickshaw.Graph.Axis.X({
         graph: graph,
         tickFormat: Rickshaw.Fixtures.Number.formatKMBT
@@ -46,8 +60,15 @@
     
     var preview = new Rickshaw.Graph.RangeSlider.Preview( {
     	graph: graph,
+    	renderer: 'line',
     	element: document.getElementById('preview'),
     } );
+    
+    preview.onSlide(function(graph, xMin, xMax) {
+		graph2.window.xMin = xMin;
+		graph2.window.xMax = xMax;
+		graph2.update();
+    });
     
 </script>
 </body>
