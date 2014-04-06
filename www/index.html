@@ -45,7 +45,7 @@
         var graph = new Rickshaw.Graph( {
             element: document.querySelector(selector),
             width: 1280,
-            height: 200,
+            height: 150,
             renderer: 'line',
             series: series
         } );
@@ -63,12 +63,13 @@
     var gr = graphLogDataFor('GR', 'yellow');
     var dphi = graphLogDataFor('DPHI', 'green');
     var seis = graphSeisData('black');
-    var graph = graphFor([rhob, dphi], '#chart');
+    var graph = graphFor([seis, gr, rhob, dphi], '#chart');
     var graph2 = graphFor([gr], '#chart2');
     var seisGraph = graphFor([seis], '#seis-graph');
 
     var preview = new Rickshaw.Graph.RangeSlider.Preview({
     	graph: graph,
+    	height: 200,
     	renderer: 'line',
     	element: document.getElementById('preview'),
     });
@@ -81,7 +82,8 @@
     
     preview.onSlide(function(graph, xMin, xMax) {
         updateGraphRange(graph2, xMin, xMax);
-        updateGraphRange(seisGraph, xMin, xMax);
+        var windowSize = 0; //(xMax - xMin) * 5;
+        updateGraphRange(seisGraph, xMin - windowSize, xMax + windowSize);
     });
     
 </script>
