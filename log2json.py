@@ -5,6 +5,7 @@ las_file = 'NEWBURN_1.las'
 las_reader = las.LASReader(las_file)
 
 output_file = 'www/log_json.json'
+
 data = las_reader.data
 decimate = 25
 

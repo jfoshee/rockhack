@@ -1,0 +1,136 @@
+DEPT,Depth Index
+TDEP,Echo - Experiment depth
+TIME,Azimuthal Density - Time
+BS,Bit Size
+CS,CABLE SPEED
+CVEL,Cable Velocity
+TENS,CABLE TENSION
+ETIM,TIME FROM LOG BEGIN (MS)
+AREA,Area of Borehole
+AFCD,Area of Future Casing
+ABS,Area of Bit
+DCAL,DIFFERENTIAL CALIPER
+FCD,Future Casing Diameter
+HDAR,Hole Diameter from Area
+IHV,Integrated Hole Volume
+ICV,Integrated Cement Volume
+CHI1,Goodness of fit of each echo data packet
+CHI2,HNGS Detector 2 Chi-Squared
+GCF1,HNGS Detector 1 Gain Correction Factor
+GCF2,HNGS Detector 2 Gain Correction Factor
+HTHO,HNGS Formation Thorium Concentration
+HURA,HNGS Formation Uranium Concentration
+HFK,HNGS Formation Potassium Concentration
+HBHK,HNGS Borehole Potassium Concentration
+HSGR,HNGS Standard Gamma-Ray
+HCGR,HNGS Computed Gamma-Ray
+MTHO,HNGS (HTHO - STHO)
+MURA,HNGS (HURA - SURA)
+MFK,HNGS (HFK - SFK)
+MBHK,HNGS (HBHK - SBHK)
+MSGR,MSG RECEIVER
+MCGR,HNGS (HCGR - SCGR)
+PTHR,HNGS (HTHO + STHO)
+PURA,HNGS (HURA + SURA)
+PFK,HNGS (HFK + SFK)
+PBHK,HNGS (HBHK + SBHK)
+PSGR,HNGS (HSGR + SSGR)
+PCGR,HNGS (HCGR + SCGR)
+RDF1,HNGS Detector 1 Resolution Degradation Factor
+RDF2,HNGS Detector 2 Resolution Degradation Factor
+HTPR,HNGS Thorium/Potassium Ratio
+HTUR,HNGS Thorium/Uranium Ratio
+HUPR,HNGS Uranium/Potassium Ratio
+VBF1,HNGS Detector 1 Variable Barite Factor
+VBF2,HNGS Detector 2 Variable Barite Factor
+SHNG,HNGS Acquisition Status Word
+CSTS_HNGS,GammaRay Combined Tool Status Word
+S1TM,HNGS Detector 1 Temperature
+S1CP,HNGS Detector 1 Pulse Shape Compensation Control Loop Status
+S1CH,HNGS Detector 1 High Voltage Control Loop Status
+S1DT,HNGS Detector 1 Dead Time Countrate
+S1SP,HNGS Detector 1 Anti-Coincidence Spectrum
+S1AT,HNGS Detector 1 Spectrum Accumulation Time
+S2TM,HNGS Detector 2 Temperature
+S2CP,HNGS Detector 2 Pulse Shape Compensation Control Loop Status
+S2CH,HNGS Detector 2 High Voltage Control Loop Status
+S2NR,HNGS Detector 2 Na22 Set Point
+S2DT,HNGS Detector 2 Dead Time Countrate
+S2SP,HNGS Detector 2 Anti-Coincidence Spectrum
+S2AT,HNGS Detector 2 Spectrum Accumulation Time
+DF,Uncalibrated Downhole Force
+CDF,Calibrated Downhole Force
+STIA,Stuck Tool Indicator Adjusted
+STIT,Stuck Tool Indicator Total
+IDWD,Borehole depth as measured by the IDW (Integrated Depth Wheel)
+SCD,Speed Corrected Depth
+BFV_MW,Bound Fluid Volume - Multi Wait
+BFV_MW_SIG,Standard Deviation of Bound Fluid Volume - Multi Wait
+BFV,Bound Fluid Volume
+BFV_SIG,Standard Deviation of Bound Fluid Volume (BFV)
+BADF_CMR,CMR Bad Hole (Mud Signal) Flag
+TCMR_MW,Total CMR Porosity - Multi Wait
+TCMR_MW_SIG,Standard Deviation of Total CMR Porosity - Multi Wait
+CMRP_3MS,CMR Porosity with T2 values greater than 3 ms
+CMRP_3MS_MW,CMR Porosity with T2 values greater than 3 ms - Multi Wait
+CMFF_MW,CMR Free Fluid - Multi Wait
+CMFF_MW_SIG,Standard Deviation of CMR Free Fluid - Multi Wait
+CMFF,CMR Free Fluid
+CMFF_SIG,Standard Deviation of CMR Free Fluid
+CMR_PHI_CONV,CMR Porosity Conversion factor
+CBP1,CMR Bin Porosity 1
+CBP2,CMR Bin Porosity 2
+CBP3,CMR Bin Porosity 3
+CBP4,CMR Bin Porosity 4
+CBP5,CMR Bin Porosity 5
+CBP6,CMR Bin Porosity 6
+CBP7,CMR Bin Porosity 7
+CBP8,CMR Bin Porosity 8
+CBF1,CMR Bound Fluid Volume for T2 Cutoff 1
+CBF2,CMR Bound Fluid Volume for T2 Cutoff 2
+CBF3,CMR Bound Fluid Volume for T2 Cutoff 3
+CBF4,CMR Bound Fluid Volume for T2 Cutoff 4
+CBF5,CMR Bound Fluid Volume for T2 Cutoff 5
+CBF6,CMR Bound Fluid Volume for T2 Cutoff 6
+CBF7,CMR Bound Fluid Volume for T2 Cutoff 7
+CFF1,CMR Free Fluid for T2 Cutoff 1
+CFF2,CMR Free Fluid for T2 Cutoff 2
+CFF3,CMR Free Fluid for T2 Cutoff 3
+CFF4,CMR Free Fluid for T2 Cutoff 4
+CFF5,CMR Free Fluid for T2 Cutoff 5
+CFF6,CMR Free Fluid for T2 Cutoff 6
+CFF7,CMR Free Fluid for T2 Cutoff 7
+CMR_RAW_PHI,CMR Raw Porosity
+AMP_DIST,Amplitude Distribution
+AMP_DIST_SIG,Standard Deviation of Amplitude Distribution
+NO_UPDATE_COUNT,No New Sample Acquired
+GAMMA,Computed Regularization Parameter Gamma
+NOISE_TOOL,CMR Tool Hardware Noise per Echo
+NOISE_TOOL_WSUM,Tool Noise Computed from Window Sums
+NOISE_FLAG,CMR Excessive Noise Flag
+NOISE_ENV,CMR Tool Hardware Noise per Echo with Environmental Effects
+KSDR,Permeability Computed Using SDR Model
+KTIM,CMR Permeability Computed Using Timur/Coates Model
+T12R,Computed T1/T2
+T2LM_MW,T2 Logarithmic Mean - Multi Wait
+T2LM_MW_SIG,Standard Deviation of T2 Logarithmic Mean - Multi Wait
+T2LM,T2 Logarithmic Mean
+T2LM_SIG,Standard Deviation of T2 Logarithmic Mean
+TCMR,Total CMR Porosity
+TCMR_SIG,Standard Deviation of Total CMR Porosity
+WAIT_FLAG,Insufficient Wait Time Flag
+B0_MC,B0 for Master Calibration
+LOOP,Calibration Loop Amplitude
+CMR_GAIN,CMR System Gain
+CMR_TEMP,CMR Sonde Temperature
+DELTA_B0,Delta B0
+NOISE_PWR,Noise Power Computed Down-Hole
+INV_AMP_MC_25,Inverse Master Calibration Amplitude Corrected to 25 degC
+FREQ_OP,Operating Frequency
+SPHASE,Signal Phase
+WSUM,Window Sums
+CMR_SIG_PROC_SW_RT,Real-Time Signal Processing Call Switch
+ECHO_AMP_R,R-Component of CMR Spin Echoes
+ECHO_AMP_X,X-Component of CMR Spin Echoes
+C1SP,HNGS Detector 1 Coincidence Spectrum
+C2SP,HNGS Detector 2 Coincidence Spectrum

@@ -1,0 +1,166 @@
+DEPT,Depth Index
+ABFR,Array Induction Quality Control Borehole Formation Ratio
+ABS,Area of Bit
+ADES,Array Induction Diagnostic Executive Summary
+AE10,Array Induction Resistivity Environmentally Compensated Log Processing AE10
+AE20,Array Induction Resistivity Environmentally Compensated Log Processing AE20
+AE30,Array Induction Resistivity Environmentally Compensated Log Processing AE30
+AE60,Array Induction Resistivity Environmentally Compensated Log Processing AE60
+AE90,Array Induction Resistivity Environmentally Compensated Log Processing AE90
+AECEF,Array Induction End Of Casing Effect Flag
+AECF,Array Induction Environmentally Compensated Log Processing Chart Flag
+AECO10,Array Induction Conductivity Environmentally Compensated Log Processing AE10
+AECO20,Array Induction Conductivity Environmentally Compensated Log Processing AE20
+AECO30,Array Induction Conductivity Environmentally Compensated Log Processing AE30
+AECO60,Array Induction Conductivity Environmentally Compensated Log Processing AE60
+AECO90,Array Induction Conductivity Environmentally Compensated Log Processing AE90
+AEHF,Array Induction Environmentally Compensated Log Processing Hole Flag
+AEMF,Array Induction Environmentally Compensated Log Processing Magnetic Mud Flag
+AERS,Array Induction Environmentally Compensated Log Processing Resolution Flag
+AF10,Array Induction Four Foot Resistivity A10
+AF20,Array Induction Four Foot Resistivity A20
+AF30,Array Induction Four Foot Resistivity A30
+AF60,Array Induction Four Foot Resistivity A60
+AF90,Array Induction Four Foot Resistivity A90
+AFCD,Area of Future Casing
+AFCO10,Array Induction Four Foot Conductivity A10
+AFCO20,Array Induction Four Foot Conductivity A20
+AFCO30,Array Induction Four Foot Conductivity A30
+AFCO60,Array Induction Four Foot Conductivity A60
+AFCO90,Array Induction Four Foot Conductivity A90
+AIBC,Array Induction Borehole Corrected
+AIFC,Array Induction Fully Calibrated
+AO10,Array Induction One Foot Resistivity A10
+AO20,Array Induction One Foot Resistivity A20
+AO30,Array Induction One Foot Resistivity A30
+AO60,Array Induction One Foot Resistivity A60
+AO90,Array Induction One Foot Resistivity A90
+AOCO10,Array Induction One Foot Conductivity A10
+AOCO20,Array Induction One Foot Conductivity A20
+AOCO30,Array Induction One Foot Conductivity A30
+AOCO60,Array Induction One Foot Conductivity A60
+AOCO90,Array Induction One Foot Conductivity A90
+AQABN,Array Induction Quality Control Borehole Corrected Non-Filtered Array Signal
+AREA,Area of Borehole
+ASCA,Array Induction SPA Calibrated
+AT10,Array Induction Two Foot Resistivity A10
+AT20,Array Induction Two Foot Resistivity A20
+AT30,Array Induction Two Foot Resistivity A30
+AT60,Array Induction Two Foot Resistivity A60
+AT90,Array Induction Two Foot Resistivity A90
+ATCA,Array Induction Array Temperature Calibrated
+ATCO10,Array Induction Two Foot Conductivity A10
+ATCO20,Array Induction Two Foot Conductivity A20
+ATCO30,Array Induction Two Foot Conductivity A30
+ATCO60,Array Induction Two Foot Conductivity A60
+ATCO90,Array Induction Two Foot Conductivity A90
+ATD1,Array Induction Two Foot Inner Diameter of Invasion(D1)
+ATD2,Array Induction Two Foot Outer Diameter of Invasion (D2)
+ATOO,Array Induction Two Foot Curves Out of Order Flag
+ATPR,Array Induction Two Foot Radial Resistivity Profile
+ATRT,Array Induction Two Foot Rt
+ATRX,Array Induction Two Foot Rxo
+ATVM,Array Induction Two Foot Volume Mud Filtrate
+BS,Bit Size
+CDF,Calibrated Downhole Force
+CHAM,Circle Hole Angle Maximum
+CHR1,Label Peak Coherence Receiver Array - Lower Dipole
+CHR2,Label Peak Coherence Receiver Array - Upper Dipole
+CHRP,Label Peak Coherence Receiver Array Compressional - Monopole P&S
+CHRS,Label Peak Coherence Receiver Array Shear - Monopole P&S
+CHSC,Circle Hole Shape Condition
+CHTP,Label Peak Coherence Transmitter Array Compressional - Monopole P&S
+CHTS,Cable head tension
+CRMI,Circle Hole Radius Minimum
+CS,CABLE SPEED
+CVEL,Cable Velocity
+DCAL,DIFFERENTIAL CALIPER
+DCI1,Data Copy Indicator - Lower Dipole
+DCI2,Data Copy Indicator - Upper Dipole
+DCI4,Data Copy Indicator - Monopole P&S
+DF,Uncalibrated Downhole Force
+DT1,Delta-T Shear - Lower Dipole
+DT1R,Delta-T Shear Receiver Array - Lower Dipole
+DT2,Delta-T Shear - Upper Dipole
+DT2R,Delta-T Shear Receiver Array - Upper Dipole
+DT4P,Delta-T Compressional - Monopole P&S
+DT4S,Delta-T Shear - Monopole P&S
+DTCO,Corrected Sonic Log
+DTRP,Delta-T Compressional Receiver Array - Monopole P&S
+DTRS,Slowness from receiver array
+DTSM,Delta-T Shear
+DTTP,Delta-T Compressional Transmitter Array - Monopole P&S
+DTTS,Slowness from transmitter array
+ECD,Ellipse Center Distance
+ECGR,Environmentally Corrected Gamma Ray
+ECT,EMS Cartridge Temperature
+EEC1,EMS Eccenter 1
+EFCF,EMS Fixed Caliper Flag
+EFF,EMS Formation Flag
+EFNF,EMS Frame Number Float
+ELA,Ellipse Long Axis
+EMCF,EMS Mudcake Flag
+EMDF,EMS Mode Float
+EMID,Ellipse Minimum Distance
+EOPF,EMS Option Float
+ERA,Ellipse Rotation Angle
+ESA,Ellipse Short Axis
+ETC1,EMS Tool Center 1
+ETC2,EMS Tool Center 2
+ETC3,EMS Tool Center 3
+ETIM,TIME FROM LOG BEGIN (MS)
+FCD,Future Casing Diameter
+GR,NATURAL GAMMA RAY
+HD1,Hole Diameter 1
+HD2,Hole Diameter 2
+HD3,Hole Diameter 3
+HDAR,Hole Diameter from Area
+HDIF,Hole Diameter Difference
+HDMI,Hole Diameter Minimum
+HDMX,Hole Diameter Maximum
+HDOV,Hole Diameter from Oval
+ICV,Integrated Cement Volume
+IDWD,Borehole depth as measured by the IDW (Integrated Depth Wheel)
+IHV,Integrated Hole Volume
+ITT,INTEGRATED TRAVEL TIME MARK
+LSR,Long space reduced by ISSD quadratic fit
+OSDV,Oval Standard Deviation
+PHWA,Pad Hole-Wall Angle
+PR,Poisson's Ratio
+PWF1,DSST Packed Waveform Data - Lower Dipole
+PWF2,DSST Packed Waveform Data - Upper Dipole
+PWF4,DSST Packed Waveform Data - Monopole P&S
+PWN1,DSST Packed Waveform Normalization Factors - Lower Dipole
+PWN2,DSST Packed Waveform Normalization Factors - Upper Dipole
+PWN4,DSST Packed Waveform Normalization Factors - Monopole P&S
+RD1,Radius 1
+RD2,Radius 2
+RD3,Radius 3
+RD4,Radius 4
+RD5,Radius 5
+RD6,Radius 6
+RDMI,Radius Minimum
+REA,Relative Ellipse Azimuth
+REMS,Mud Resistivity
+RGR,NATURAL GAMMA RAY
+RT,True Resistivity
+SAS1,Sonic Array Status - Lower Dipole
+SAS2,Sonic Array Status
+SAS4,Sonic Array Status - P S
+SCD,Speed Corrected Depth
+SOBS,Label Borehole Size for Bias Correction
+SPHI,SONIC POROSITY
+SPR1,Spare 1
+SPR2,Spare 2
+SPR4,Spare 4
+SPT4,STC Slowness Projection Transmitter Array - Monopole P&S
+SRD1,Synthetic Radius 1
+SRD2,Synthetic Radius 2
+SRD3,Synthetic Radius 3
+SSVE,Sonic Shear Velocity
+SVEL,Sonic Velocity
+TDEP,Echo - Experiment depth
+TENS,CABLE TENSION
+TIME,Azimuthal Density - Time
+TMP,Mud Temperature
+VPVS,Compressional to shear velocity ratio
