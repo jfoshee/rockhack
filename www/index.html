@@ -29,12 +29,15 @@
         if (amp.length != depth.length)
             console.log('Warning: different lengths: ' + depthName + ' vs ' + logName);
         var data = [];
+        var min = d3.min(amp);
+        var max = d3.max(amp);
         for(var i = 0; i < depth.length; ++i) {
             data[i] = {y: amp[i], x: depth[i] };
         }
         return {
             color: color || 'black',
-            data: data
+            data: data,
+            scale: d3.scale.linear().domain([min, max]).nice()
         };
     };
     
