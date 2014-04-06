@@ -11,10 +11,11 @@
 <div id="chart"></div>
 <div id="chart2"></div>
 <div id="seis-graph"></div>
+<div id="core" style="background-image: url(core.png); background-repeat:no-repeat; width: 600px; height: 80px;">
+</div>
 <div id="preview"></div>
 
 <script>
-
     var graphLogDataFor = function(logName, color) {
         return graphDataFor(logData, 'DEPT', logName, color);
     };
@@ -44,7 +45,7 @@
     var graphFor = function(series, selector) {
         var graph = new Rickshaw.Graph( {
             element: document.querySelector(selector),
-            width: 1280,
+            width: 600,
             height: 150,
             renderer: 'line',
             series: series
@@ -80,10 +81,25 @@
 		graph.update();        
     };
     
+    var coreDiv = document.querySelector('#core');
+    coreDiv.style.backgroundSize = '600px 80px';
+    coreDiv.style.backgroundPosition = '0px 0px';
+    var coreImageLength = 1413;
+    var screenLength = 600;
+
     preview.onSlide(function(graph, xMin, xMax) {
         updateGraphRange(graph2, xMin, xMax);
         var windowSize = 0; //(xMax - xMin) * 5;
         updateGraphRange(seisGraph, xMin - windowSize, xMax + windowSize);
+        
+        var totalHeight = 6000 - 1000;
+        var x0 = (xMin - 1000) / totalHeight;
+        var x0_px = x0 * screenLength;
+        //var x1 = (xMax - 1000) / totalHeight;
+        var w = (xMax - xMin) / totalHeight;
+        var s = screenLength / w;
+        coreDiv.style.backgroundPositionX = '-'+x0_px / w+'px';
+        coreDiv.style.backgroundSize = '' + s + 'px 80px';
     });
     
 </script>
