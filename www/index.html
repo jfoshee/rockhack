@@ -1,73 +1,117 @@
 <!doctype html>
 <html>
-<body>
-<link rel="stylesheet" href="vendor/rickshaw.min.css">
-<script src="vendor/d3.v3.js"></script>
-<script src="vendor/rickshaw.min.js"></script>
-<script src="vendor/Rickshaw.Graph.RangeSlider.Preview.js"></script>
-<script src="log_json.json"></script>
+  <body>
+    <link rel="stylesheet" href="vendor/rickshaw.min.css">
+    <script src="vendor/d3.v3.js"></script>
+    <script src="vendor/rickshaw.min.js"></script>
+    <script src="vendor/Rickshaw.Graph.RangeSlider.Preview.js"></script>
 
-<div id="chart"></div>
-<div id="preview"></div>
-<div id="chart2"></div>
+    <script src="seismic.seis"></script>
+    <script src="log_json.json"></script>
 
-<script>
 
-    var graphDataFor = function(logName, color) {
-        var depth = logData['DEPT'];
-        var amp = logData[logName];
-        if (amp.length != depth.length)
-            console.log('Warning: different lengths');    
-        var data = [];
-        for(var i = 0; i < depth.length; ++i) {
-            data[i] = {y: amp[i], x: depth[i] };
-        }
-        return {
-            color: color || 'black',
-            data: data
-        };
-    };
-    
-    var rhob = graphDataFor('RHOB', 'red');
-    var gr = graphDataFor('GR', 'yellow');
-    var dphi = graphDataFor('DPHI', 'green');
-    
-    var graph = new Rickshaw.Graph( {
-        element: document.querySelector("#chart"),
-        width: 580,
-        height: 250,
-        renderer: 'line',
-        series: [ rhob, dphi ]
-    } );
-    graph.render();
-    
-    var graph2 = new Rickshaw.Graph( {
-        element: document.querySelector("#chart2"),
-        width: 580,
-        height: 250,
-        renderer: 'line',
-        series: [ gr ]
-    } );
-    graph2.render();
-    
-    var tickFormat = Rickshaw.Fixtures.Number.formatKMBT;
-    var xAxis = new Rickshaw.Graph.Axis.X({ graph: graph, tickFormat: tickFormat });
-    xAxis.render();
-    var yAxis = new Rickshaw.Graph.Axis.Y({ graph: graph, tickFormat: tickFormat });
-    yAxis.render();
-    
-    var preview = new Rickshaw.Graph.RangeSlider.Preview( {
-    	graph: graph,
-    	renderer: 'line',
-    	element: document.getElementById('preview'),
-    } );
-    
-    preview.onSlide(function(graph, xMin, xMax) {
-		graph2.window.xMin = xMin;
-		graph2.window.xMax = xMax;
-		graph2.update();
-    });
-    
-</script>
-</body>
+    <div id="preview"></div>
+    <span>
+      <div id="chart"></div>
+      <div id="chart2"></div>
+      <div id="seismic"></div>
+    </span>
+    <script>
+
+     var graphDataFor = function(logName, color, transpose) {
+       var depth = logData['DEPT'];
+       var amp = logData[logName];
+       if (amp.length != depth.length)
+       console.log('Warning: different lengths');
+       var data = [];
+       for(var i = 0; i < depth.length; ++i) {
+	 if(transpose){
+           data[i] = {x: amp[i], y: depth[i] };
+	 }
+	 else{
+	   data[i] = {y: amp[i], x: depth[i] };
+	 }
+       }
+       return {
+         color: color || 'black',
+         data: data
+       };
+     };
+
+     var seismicData = function(color){
+
+       var depth = seisData['z'];
+       var amp = seisData['seis'];
+       var data = [];
+
+       for(var i = 0; i < depth.length; ++i){
+	 data[i] = {x: amp[i], y: depth[i]};
+       };
+       return {color: color || 'black',
+	       data: data};
+     };
+
+     var transpose = 1
+     var rhob = graphDataFor('RHOB', 'red');
+     var gr = graphDataFor('GR', 'yellow');
+     var dphi = graphDataFor('DPHI', 'green');
+     var seismic = seismicData('blue');
+
+
+
+     var graph = new Rickshaw.Graph( {
+       element: document.querySelector("#chart"),
+       width: 500,
+       height: 300,
+       renderer: 'line',
+       series: [ rhob, dphi ]
+     } );
+     graph.render();
+
+     var graph2 = new Rickshaw.Graph( {
+       element: document.querySelector("#chart2"),
+       width: 500,
+       height: 300,
+       renderer: 'scatterplot',
+       series: [ gr ]
+     } );
+     graph2.render();
+
+     var seismic_graph = new Rickshaw.Graph( {
+       element: document.querySelector("#seismic"),
+       width: 100,
+       height: 2000,
+       renderer: 'line',
+       series: [ seismic ]
+     } );
+     seismic_graph.render();
+
+     var graphs = [graph2, seismic_graph];
+
+     var tickFormat = Rickshaw.Fixtures.Number.formatKMBT;
+     var xAxis = new Rickshaw.Graph.Axis.X({ graph: graph, tickFormat: tickFormat });
+     xAxis.render();
+     var yAxis = new Rickshaw.Graph.Axis.Y({ graph: graph, tickFormat: tickFormat });
+     yAxis.render();
+
+     var preview = new Rickshaw.Graph.RangeSlider.Preview( {
+       graph: graph,
+       renderer: 'line',
+       element: document.getElementById('preview'),
+     } );
+
+     preview.onSlide(function(graph, xMin, xMax) {
+
+       graph2.window.xMin = xMin;
+       graph2.window.xMax = xMax;
+       graph2.update();
+
+       seismic_graph.window.yMin = xMin;
+       seismic_graph.window.yMax = xMax;
+       seismic_graph.update();
+
+     });
+
+    </script>
+  </body>
 </html>
