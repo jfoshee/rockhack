@@ -1,0 +1,15 @@
+DEPT,Depth Index
+CALI,Average Caliper
+DRHO,DENSITY CORRECTION
+GR,NATURAL GAMMA RAY
+HDRH,High Resolution Density Correction
+HGR,High Resolution Gamma Ray
+HNPO,High Resolution Enhanced Thermal Neutron Porosity in Selected Lithology
+HPEF,High Resolution Photoelectric Factor
+HRHO,High Resolution Bulk Density
+NPHI,NEUTRON POROSITY
+NPOR,Enhanced Thermal Neutron Porosity in Selected Lithology
+PEF,Photoelectric Factor
+RHOB,BULK DENSITY
+TENS,CABLE TENSION
+TNPH,Thermal Neutron Porosity (Ratio Method) in Selected Lithology

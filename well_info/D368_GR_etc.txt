@@ -1,0 +1,13 @@
+DEPT,Depth Index
+CS,CABLE SPEED
+TENS,CABLE TENSION
+HTHO,HNGS Formation Thorium Concentration
+HURA,HNGS Formation Uranium Concentration
+HFK,HNGS Formation Potassium Concentration
+HSGR,HNGS Standard Gamma-Ray
+HCGR,HNGS Computed Gamma-Ray
+HTPR,HNGS Thorium/Potassium Ratio
+HTUR,HNGS Thorium/Uranium Ratio
+HUPR,HNGS Uranium/Potassium Ratio
+S2TM,HNGS Detector 2 Temperature
+DF,Uncalibrated Downhole Force

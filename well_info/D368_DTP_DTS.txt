@@ -1,0 +1,4 @@
+DEPT,Depth Index
+TVD,Azimuthal Density - Total Vertical Depth
+TEMP,Temperature
+SCO2,Standard deviation of C/O ratio (far detector)
