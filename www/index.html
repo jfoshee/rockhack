@@ -8,8 +8,8 @@
 <script src="log_json.json"></script>
 
 <div id="chart"></div>
-<div id="preview"></div>
 <div id="chart2"></div>
+<div id="preview"></div>
 
 <script>
 
@@ -17,7 +17,7 @@
         var depth = logData['DEPT'];
         var amp = logData[logName];
         if (amp.length != depth.length)
-            console.log('Warning: different lengths');    
+            console.log('Warning: different lengths: DEPT vs ' + logName);
         var data = [];
         for(var i = 0; i < depth.length; ++i) {
             data[i] = {y: amp[i], x: depth[i] };
@@ -28,39 +28,35 @@
         };
     };
     
+    var graphFor = function(series, selector) {
+        var graph = new Rickshaw.Graph( {
+            element: document.querySelector(selector),
+            width: 1280,
+            height: 200,
+            renderer: 'line',
+            series: series
+        } );
+        graph.render();
+        var tickFormat = Rickshaw.Fixtures.Number.formatKMBT;
+        var xAxis = new Rickshaw.Graph.Axis.X({ graph: graph, tickFormat: tickFormat });
+        xAxis.render();
+        var yAxis = new Rickshaw.Graph.Axis.Y({ graph: graph, tickFormat: tickFormat });
+        yAxis.render();
+        return graph;
+    };
+
+    
     var rhob = graphDataFor('RHOB', 'red');
     var gr = graphDataFor('GR', 'yellow');
     var dphi = graphDataFor('DPHI', 'green');
-    
-    var graph = new Rickshaw.Graph( {
-        element: document.querySelector("#chart"),
-        width: 580,
-        height: 250,
-        renderer: 'line',
-        series: [ rhob, dphi ]
-    } );
-    graph.render();
-    
-    var graph2 = new Rickshaw.Graph( {
-        element: document.querySelector("#chart2"),
-        width: 580,
-        height: 250,
-        renderer: 'line',
-        series: [ gr ]
-    } );
-    graph2.render();
-    
-    var tickFormat = Rickshaw.Fixtures.Number.formatKMBT;
-    var xAxis = new Rickshaw.Graph.Axis.X({ graph: graph, tickFormat: tickFormat });
-    xAxis.render();
-    var yAxis = new Rickshaw.Graph.Axis.Y({ graph: graph, tickFormat: tickFormat });
-    yAxis.render();
-    
-    var preview = new Rickshaw.Graph.RangeSlider.Preview( {
+    var graph = graphFor([rhob, dphi], '#chart');
+    var graph2 = graphFor([gr], '#chart2');
+
+    var preview = new Rickshaw.Graph.RangeSlider.Preview({
     	graph: graph,
     	renderer: 'line',
     	element: document.getElementById('preview'),
-    } );
+    });
     
     preview.onSlide(function(graph, xMin, xMax) {
 		graph2.window.xMin = xMin;
