@@ -6,18 +6,28 @@
 <script src="vendor/rickshaw.min.js"></script>
 <script src="vendor/Rickshaw.Graph.RangeSlider.Preview.js"></script>
 <script src="log_json.json"></script>
+<script src="seismic.seis"></script>
 
 <div id="chart"></div>
 <div id="chart2"></div>
+<div id="seis-graph"></div>
 <div id="preview"></div>
 
 <script>
 
-    var graphDataFor = function(logName, color) {
-        var depth = logData['DEPT'];
-        var amp = logData[logName];
+    var graphLogDataFor = function(logName, color) {
+        return graphDataFor(logData, 'DEPT', logName, color);
+    };
+    
+    var graphSeisData = function(color) {
+        return graphDataFor(seisData, 'z', 'seis', color);
+    };
+    
+    var graphDataFor = function(dataSource, depthName, logName, color) {
+        var depth = dataSource[depthName];
+        var amp = dataSource[logName];
         if (amp.length != depth.length)
-            console.log('Warning: different lengths: DEPT vs ' + logName);
+            console.log('Warning: different lengths: ' + depthName + ' vs ' + logName);
         var data = [];
         for(var i = 0; i < depth.length; ++i) {
             data[i] = {y: amp[i], x: depth[i] };
@@ -46,11 +56,13 @@
     };
 
     
-    var rhob = graphDataFor('RHOB', 'red');
-    var gr = graphDataFor('GR', 'yellow');
-    var dphi = graphDataFor('DPHI', 'green');
+    var rhob = graphLogDataFor('RHOB', 'red');
+    var gr = graphLogDataFor('GR', 'yellow');
+    var dphi = graphLogDataFor('DPHI', 'green');
+    var seis = graphSeisData('black');
     var graph = graphFor([rhob, dphi], '#chart');
     var graph2 = graphFor([gr], '#chart2');
+    var seisGraph = graphFor([seis], '#seis-graph');
 
     var preview = new Rickshaw.Graph.RangeSlider.Preview({
     	graph: graph,
@@ -58,10 +70,15 @@
     	element: document.getElementById('preview'),
     });
     
+    var updateGraphRange = function(graph, xMin, xMax) {
+		graph.window.xMin = xMin;
+		graph.window.xMax = xMax;
+		graph.update();        
+    };
+    
     preview.onSlide(function(graph, xMin, xMax) {
-		graph2.window.xMin = xMin;
-		graph2.window.xMax = xMax;
-		graph2.update();
+        updateGraphRange(graph2, xMin, xMax);
+        updateGraphRange(seisGraph, xMin, xMax);
     });
     
 </script>
