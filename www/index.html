@@ -11,7 +11,7 @@
 <div id="chart"></div>
 <div id="chart2"></div>
 <div id="seis-graph"></div>
-<div id="core" style="background-image: url(core.png); background-repeat:no-repeat; width: 600px; height: 80px;">
+<div id="core" style="background-image: url(core.png); background-repeat:no-repeat; width: 1280px; height: 80px;">
 </div>
 <div id="preview"></div>
 
@@ -45,7 +45,7 @@
     var graphFor = function(series, selector) {
         var graph = new Rickshaw.Graph( {
             element: document.querySelector(selector),
-            width: 600,
+            width: 1280,
             height: 150,
             renderer: 'line',
             series: series
@@ -82,10 +82,10 @@
     };
     
     var coreDiv = document.querySelector('#core');
-    coreDiv.style.backgroundSize = '600px 80px';
+    coreDiv.style.backgroundSize = '1280px 80px';
     coreDiv.style.backgroundPosition = '0px 0px';
     var coreImageLength = 1413;
-    var screenLength = 600;
+    var screenLength = 1280;
 
     preview.onSlide(function(graph, xMin, xMax) {
         updateGraphRange(graph2, xMin, xMax);
