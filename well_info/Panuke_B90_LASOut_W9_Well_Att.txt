@@ -1,3 +1,0 @@
-DEPTH,OUTPUT DEPTH
-TVD,Azimuthal Density - Total Vertical Depth
-TVDSS,Sub-sea TVD: True Vertical Depth measured from Mean Sea Level
